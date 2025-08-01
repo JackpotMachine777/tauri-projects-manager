@@ -1,0 +1,137 @@
+body{
+    background-color: #121212;
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+  background-color: #121212;
+  color: #e0e0e0; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  background-color: #2a2a2a;
+  padding: 16px;
+  border-radius: 12px;
+  width: 280px;
+  color: #ddd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebar h2 {
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #bbb;
+  font-size: 1.2rem;
+}
+
+.sidebar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar li {
+  background-color: #6200ee;
+  color: white;
+  font-weight: 600;
+  padding: 12px 18px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(98, 0, 238, 0.5);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar li:hover {
+  background-color: #7f39fb;
+  box-shadow: 0 4px 16px rgba(127, 57, 251, 0.7);
+}
+
+.sidebar li.active {
+  background-color: #3700b3;
+  box-shadow: 0 0 15px rgba(55, 0, 179, 0.9);
+}
+
+
+.projects-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.projects-list li {
+  margin-bottom: 12px;
+  padding: 10px 15px;
+  background-color: #222222;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+.projects-list li button {
+  background-color: #6200ee;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.projects-list li button:hover {
+  background-color: #3700b3;
+}
+
+.folder-picker button {
+  background-color: #bb86fc;
+  border: none;
+  color: #121212;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.folder-picker button:hover {
+  background-color: #985eff;
+}
+
+.folder-picker .selected {
+  background-color: #222222;
+  padding: 12px 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  margin-bottom: 15px;
+}
+
+.folder-picker p {
+  margin: 0 0 8px 0;
+  color: #e0e0e0;
+}
+
+.folder-picker .selected button {
+  background-color: #03dac6;
+  color: #121212;
+}
+
+.folder-picker .selected button:hover {
+  background-color: #00bfa5;
+}
+
+p[style*="color: red"] {
+  color: #cf6679 !important;
+  font-weight: 600;
+}
