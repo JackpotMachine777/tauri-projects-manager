@@ -1,5 +1,6 @@
 body{
     background-color: #121212;
+    overflow: hidden;
 }
 
 .App {
@@ -19,6 +20,7 @@ body{
   width: 280px;
   color: #ddd;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 900px;
 }
 
 .sidebar h2 {
@@ -60,11 +62,12 @@ body{
   box-shadow: 0 0 15px rgba(55, 0, 179, 0.9);
 }
 
-
 .projects-list {
   list-style-type: none;
   padding: 0;
   margin-top: 15px;
+  overflow: auto;
+  max-height: 430px;
 }
 
 .projects-list li {
