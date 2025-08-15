@@ -1,6 +1,7 @@
 body{
-    background-color: #121212;
-    overflow: hidden;
+  background-color: #121212;
+  margin: 0;
+  padding: 0;
 }
 
 .App {
@@ -11,6 +12,7 @@ body{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 20px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .sidebar {
@@ -20,7 +22,8 @@ body{
   width: 280px;
   color: #ddd;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  height: 900px;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar h2 {
@@ -31,9 +34,11 @@ body{
 }
 
 .sidebar ul {
+  flex: 1;
   padding: 0;
   margin: 0;
   list-style: none;
+  overflow-y: auto;
 }
 
 .sidebar li {
@@ -62,12 +67,26 @@ body{
   box-shadow: 0 0 15px rgba(55, 0, 179, 0.9);
 }
 
+.favorites-list-path {
+  color: #ccc;
+}
+
+.projects-container {
+  flex: 1;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-list-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
 .projects-list {
   list-style-type: none;
   padding: 0;
-  margin-top: 15px;
-  overflow: auto;
-  max-height: 430px;
+  margin: 0;
 }
 
 .projects-list li {
@@ -96,6 +115,10 @@ body{
   background-color: #3700b3;
 }
 
+.project-list-path {
+  color: #777;
+}
+
 .folder-picker button {
   background-color: #bb86fc;
   border: none;
@@ -104,7 +127,7 @@ body{
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   transition: background-color 0.3s ease;
 }
 
@@ -134,7 +157,52 @@ body{
   background-color: #00bfa5;
 }
 
-p[style*="color: red"] {
+.error-message {
   color: #cf6679 !important;
   font-weight: 600;
+}
+
+#search-container {
+  margin-bottom: 24px;
+}
+
+#search-container input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #6200ee;
+  background-color: #222222;
+  color: #e0e0e0;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.projects-search-bar small {
+  color: #b1b1b1;
+  margin-top: 8px;
+  display: block;
+}
+
+.favorites-search-bar input::placeholder {
+  color: #888;
+}
+
+.favorites-search-bar input:focus {
+  outline: none;
+  border-color: #bb86fc;
+  box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.2);
+}
+
+.favorites-search-bar small {
+  color: #b1b1b1;
+  margin-top: 6px;
+  display: block;
+  font-size: 12px;
+}
+
+.no-favorites, .no-results {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+  margin: 16px 0;
 }
