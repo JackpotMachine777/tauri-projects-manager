@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { invoke } from "@tauri-apps/api/core";
+import { useState, useEffect } from "react";
 import { open } from "@tauri-apps/plugin-dialog";
-import ScanProjects from "./ScanProjects";
 import "./App.css";
 
 export default function FolderPicker({selectedFolder, onFolderSelect, onAddToFav, favoriteFolders = []}){
     const [folderPath, setFolderPath] = useState(null);
-    const [projects, setProjects] = useState([]);
     const [error, setError] = useState(null);
 
     useEffect(()=>{
@@ -21,14 +18,6 @@ export default function FolderPicker({selectedFolder, onFolderSelect, onAddToFav
         setFolderPath(null);
         setFolderPath(selected);
         onFolderSelect(selected);
-
-        try{
-            const projectList = await invoke("read_projects_dir", {path: selected});
-            setProjects(projectList);
-        } catch(err){
-            setError(err.toString());
-            setProjects([]);
-        }
     }
 
     return (
@@ -38,6 +27,7 @@ export default function FolderPicker({selectedFolder, onFolderSelect, onAddToFav
           {folderPath && !favoriteFolders.includes(folderPath) &&(
             <div className="selected">
                 <p>Chosen folder: {folderPath}</p>
+
                 <button onClick={() =>{
                     onAddToFav(folderPath); 
                     onFolderSelect(folderPath);
@@ -47,7 +37,7 @@ export default function FolderPicker({selectedFolder, onFolderSelect, onAddToFav
             </div>
           )}
 
-          {error && <p style={{ color: "red" }}>Error: {error}</p>}
+          {error && <p className="error-message">Error! - {error}</p>}
         </div>
     );
 }

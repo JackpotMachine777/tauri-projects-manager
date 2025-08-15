@@ -35,10 +35,12 @@ function App(){
     }
 
     return (
-        <div className="App" style={{ display: "flex" }}>
+        <div className="App">
           <Sidebar folders={favFolders} onSelect={setSelectedFolder} />
-          <div style={{ marginLeft: "20px", flex: 1 }}>
+
+          <div className="projects-container">
             <h1>Programming Projects Manager</h1>
+
             <FolderPicker 
                 onFolderSelect={setSelectedFolder} 
                 onAddToFav={addToFav} 
